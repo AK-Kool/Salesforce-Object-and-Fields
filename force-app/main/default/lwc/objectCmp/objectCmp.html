@@ -1,16 +1,17 @@
 <template>
-    Welcome!
     <div class="slds-form-element">
         <label class="slds-form-element__label" for="combobox-id-4" id="combobox-label-id-32">Relate To</label>
         <div class="slds-form-element__control">
             <div class="slds-combobox_container">
-                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+                <div class={getDropdownClass}>
                     <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
                         <input type="text"
                             class="slds-input slds-combobox__input slds-has-focus slds-combobox__input-value"
                             id="combobox-id-4" aria-activedescendant="option1" aria-autocomplete="list"
                             aria-controls="listbox-id-4" aria-expanded="true" aria-haspopup="listbox" auto-complete="off"
-                            role="combobox" placeholder="Search..." value="salesforce" />
+                            role="combobox" placeholder="Search..." 
+                            onclick={handleOnClick} oninput={handleOnInput}
+                            onblur={handleOnBlur} data-id="in1"/>
                         <span
                             class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
                             <svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default"
@@ -39,7 +40,7 @@
                                     </span>
                                     <span class="slds-media__body">
                                         <span
-                                            class="slds-listbox__option-text slds-listbox__option-text_entity">salesforce</span>
+                                            class="slds-listbox__option-text slds-listbox__option-text_entity">{_getInputValue}</span>
                                     </span>
                                 </div>
                             </li>
